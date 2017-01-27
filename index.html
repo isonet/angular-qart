@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>qart.js example</title>
+
+    <!-- Bootstrap -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-base64-upload/dist/angular-base64-upload.min.js"></script>
+    <script src="node_modules/angular-qart/dist/angular-qart.js"></script>
+
+    <script>
+        // http://stackoverflow.com/a/20285053/1832622
+        function toDataUrl(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.responseType = 'blob';
+            xhr.onload = function () {
+                var reader = new FileReader();
+                reader.onloadend = function () {
+                    callback(reader.result);
+                };
+                reader.readAsDataURL(xhr.response);
+            };
+            xhr.open('GET', url);
+            xhr.send();
+        }
+        angular.module('qartExample', ['angular-qart', 'naif.base64'])
+                .controller('MainController', ['$scope', function ($scope) {
+                    toDataUrl('example.png', function (base64Img) {
+                        var regex = /data:(.*);base64,(.*)/gm;
+                        var parts = regex.exec(base64Img);
+                        $scope.image = {
+                            filetype: parts[1],
+                            base64: parts[2]
+                        };
+                        $scope.$apply();
+                    });
+                    $scope.optionFilter = 'threshold';
+                    $scope.txt = 'Angular quart.js';
+                }
+                ]);
+    </script>
+</head>
+<body ng-app="qartExample" ng-controller="MainController">
+    <div class="container">
+        <h1>qart.js example</h1>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-xs-7">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="text" class="col-sm-4 control-label">Text</label>
+                        <div class="col-sm-8">
+                            <input ng-model="txt" type="text" class="form-control" id="text" placeholder="example">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="format" class="col-sm-4 control-label">Filter</label>
+                        <div class="col-sm-8">
+                            <select ng-model="optionFilter" class="form-control" id="format">
+                                <option>threshold</option>
+                                <option>color</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="image" class="col-sm-4 control-label">Image URL</label>
+                        <div class="col-sm-8">
+                            <input id="image" type="file" ng-model="image" base-sixty-four-input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="preview" class="col-sm-4 control-label">Preview</label>
+                        <div class="col-sm-8">
+                            <img id="preview" ng-src="data:{{image.filetype}};base64,{{image.base64}}" width="200">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-4">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="result" class="col-sm-4 control-label">Result</label>
+                        <div class="col-sm-8">
+                            <angular-qart id="result" ng-model="txt" option-filter="{{optionFilter}}" image-url="data:{{image.filetype}};base64,{{image.base64}}"></angular-qart>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

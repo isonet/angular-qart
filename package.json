@@ -1,0 +1,31 @@
+{
+  "name": "angular-qart-example",
+  "version": "0.0.1",
+  "description": "An example for the angular-qart package",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isonet/angular-barcode.git"
+  },
+  "keywords": [
+    "angular",
+    "angular-qart",
+    "qart",
+    "isonet"
+  ],
+  "author": "Paul Biester (isonet)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isonet/angular-qart/issues"
+  },
+  "homepage": "https://github.com/isonet/angular-qart#readme",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-base64-upload": "^0.1.19",
+    "angular-qart": "^0.0.1",
+    "bootstrap": "^3.3.7"
+  }
+}
