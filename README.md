@@ -1,4 +1,4 @@
-# angular-qart [![npm version](https://badge.fury.io/js/angular-qart.svg)](https://badge.fury.io/js/angular-qart)[![licence](https://img.shields.io/npm/l/angular-qart.svg)](https://img.shields.io/npm/l/angular-qart.svg)
+# angular-qart [![npm](https://img.shields.io/npm/v/angular-qart.svg?style=flat-square)](https://github.com/isonet/angular-qart)[![licence](https://img.shields.io/npm/l/angular-qart.svg?style=flat-square))](https://img.shields.io/npm/l/angular-qart.svg)
 
 ### Check out the [demo](https://isonet.github.io/angular-qart/)!
 
