@@ -1,17 +1,17 @@
 import webpack from 'webpack';
 import path from 'path';
 const libraryName = 'angular-qart';
-const outputFile = libraryName + '.js';
+const outputFile = 'angular-qart.js';
 
 export default {
     eslint: {
         configFile: '.eslintrc.json',
         fix: false
     },
-    entry: __dirname + '/src/index.js',
+    entry: path.resolve('./src/index.js'),
     devtool: 'source-map',
     output: {
-        path: __dirname + '/dist',
+        path: path.resolve('./dist'),
         filename: outputFile,
         library: libraryName,
         libraryTarget: 'umd',

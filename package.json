@@ -5,7 +5,7 @@
   "main": "dist/angular-qart.js",
   "scripts": {
     "build": "webpack -p --config webpack.config.babel.js",
-    "lint": "eslint -c .eslintrc.json --ext .js app/"
+    "lint": "eslint -c .eslintrc.json --ext .js ./src/"
   },
   "repository": {
     "type": "git",
