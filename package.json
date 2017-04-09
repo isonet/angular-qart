@@ -1,6 +1,6 @@
 {
   "name": "angular-qart",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "An angular directive for kciter's qart.js",
   "main": "dist/angular-qart.js",
   "scripts": {
@@ -32,16 +32,16 @@
   "homepage": "https://github.com/isonet/angular-qart#readme",
   "dependencies": {},
   "devDependencies": {
-    "angular": "^1.6.1",
-    "angular-base64-upload": "^0.1.19",
-    "babel-core": "^6.21.0",
-    "babel-loader": "^6.2.10",
-    "babel-preset-es2015": "^6.9.0",
-    "bootstrap": "^3.3.7",
-    "eslint": "^3.13.1",
-    "eslint-loader": "^1.6.1",
-    "ng-annotate-loader": "^0.2.0",
-    "qartjs": "^1.0.1",
-    "webpack": "^1.14.0"
+    "angular": "1.6.4",
+    "angular-base64-upload": "0.1.19",
+    "babel-core": "6.24.1",
+    "babel-loader": "6.4.1",
+    "babel-preset-es2015": "6.24.1",
+    "bootstrap": "3.3.7",
+    "eslint": "3.19.0",
+    "eslint-loader": "1.7.1",
+    "ng-annotate-loader": "0.2.0",
+    "qartjs": "1.1.1",
+    "webpack": "1.14.0"
   }
 }
